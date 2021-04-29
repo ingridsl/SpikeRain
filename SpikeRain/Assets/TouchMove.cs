@@ -6,12 +6,14 @@ public class TouchMove : MonoBehaviour
 {
     private Rigidbody2D rigidBody;
     private float moveSpeed;
+    Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         moveSpeed = 1f;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -22,7 +24,9 @@ public class TouchMove : MonoBehaviour
 
     void Move()
     {
-        if (Input.touchCount > 0)
+        var isTouching = Input.touchCount > 0;
+        animator.SetBool("moving", isTouching);
+        if (isTouching)
         {
             Touch touch = Input.GetTouch(0);
             switch (touch.phase)
