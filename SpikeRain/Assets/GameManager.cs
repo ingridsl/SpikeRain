@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +14,9 @@ public class GameManager : MonoBehaviour
 
     bool isPlaying = true;
     bool hasSpeedUpdate = false;
+
+    public int points = 0;
+    [SerializeField] TextMeshProUGUI pointText;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +34,7 @@ public class GameManager : MonoBehaviour
         //    hasSpeedUpdate = false;
         //    StartCoroutine(BombInstantiate());
         //}
+        pointText.text = points.ToString();
     }
 
     private IEnumerator BombInstantiate()
