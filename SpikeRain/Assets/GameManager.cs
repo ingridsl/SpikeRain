@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,6 +22,11 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // EXAMPLE A: initialize with the preferences set in DOTween's Utility Panel
+        DOTween.Init();
+        // EXAMPLE B: initialize with custom settings, and set capacities immediately
+        DOTween.Init(true, true, LogBehaviour.Verbose).SetCapacity(200, 10);
+
         StartCoroutine(BombInstantiate());
         StartCoroutine(CoinInstantiate());
     }
@@ -28,6 +34,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        DOTween.Validate();
         //só se quiser alterar a velocidade que cai as bombas
         //if (hasSpeedUpdate)
         //{

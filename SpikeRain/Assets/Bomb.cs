@@ -38,8 +38,12 @@ public class Bomb : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         var gameOver = GameObject.Find("GameOver");
+
+        this.gameObject.GetComponent<Falling>().KillTween();
+
         gameOver.transform.GetChild(0).gameObject.SetActive(true);
         yield return new WaitForSeconds(2);
+
         Destroy(this.gameObject);
     }
 }

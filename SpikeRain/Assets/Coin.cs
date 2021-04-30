@@ -29,6 +29,7 @@ public class Coin : MonoBehaviour
             var audio = player.GetComponent<AudioSource>();
             audio.Play(0);
 
+            this.gameObject.GetComponent<Falling>().KillTween();
             Destroy(this.gameObject);
         }
     }

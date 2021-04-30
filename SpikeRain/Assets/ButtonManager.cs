@@ -28,6 +28,11 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void Play()
+    {
+        SceneManager.LoadScene("GameScene");
+    }
+
     public void OpenSettings()
     {
 
