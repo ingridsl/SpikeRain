@@ -18,11 +18,6 @@ public class Falling : MonoBehaviour
         moveDownSpeed = 0.4f;
         goingRight = Random.value >= 0.5;
 
-        // EXAMPLE A: initialize with the preferences set in DOTween's Utility Panel
-        DOTween.Init();
-        // EXAMPLE B: initialize with custom settings, and set capacities immediately
-        DOTween.Init(true, true, LogBehaviour.Verbose).SetCapacity(200, 10);
-
         var rot = new Vector3(0, 0, 360);
         myTween = DOTween.Sequence().
         Append(this.gameObject.transform.DORotate(rot, 5f, RotateMode.LocalAxisAdd).SetLoops(-1, LoopType.Restart));
@@ -48,28 +43,16 @@ public class Falling : MonoBehaviour
         
         if (gameObject.transform.position.y < -0.35) //LOWER THAN PLAYER
         {
-            // //this.gameObject.transform.DOScale(this.gameObject.transform.localScale * 10/100, 0.2f);
-            //var sequence = this.gameObject.transform.DOScale(0, 2f);
-
             sequence = DOTween.Sequence()
             .Append(this.gameObject.transform.DOScale(this.gameObject.transform.localScale * 10 / 100, 0.5f))
-            .Append(this.gameObject.transform.DOScale(0, 1f));
-            //DOTween.=.Play(sequence);
-            //this.gameObject.GetComponent<Animator>().SetBool("isTooLow", true);
+            .Append(this.gameObject.transform.DOScale(0, 2f));
         }
 
 
         if (gameObject.transform.position.y < -1) //END OF SCREEN
         {
-            KillTween();
             Destroy(this.gameObject);
         }
     }
-
-    public void KillTween()
-    {
-        DOTween.Kill(this.gameObject);
-        sequence.Kill();
-        myTween.Kill();
-    }
+    
 }

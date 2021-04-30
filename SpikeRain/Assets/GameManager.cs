@@ -22,11 +22,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // EXAMPLE A: initialize with the preferences set in DOTween's Utility Panel
-        DOTween.Init();
-        // EXAMPLE B: initialize with custom settings, and set capacities immediately
-        DOTween.Init(true, true, LogBehaviour.Verbose).SetCapacity(200, 10);
-
         StartCoroutine(BombInstantiate());
         StartCoroutine(CoinInstantiate());
     }
