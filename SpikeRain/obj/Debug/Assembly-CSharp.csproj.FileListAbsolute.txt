@@ -295,3 +295,10 @@ C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\obj\Debug
 C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\obj\Debug\Assembly-CSharp.dll
 C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\obj\Debug\Assembly-CSharp.pdb
+C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\Temp\Bin\Debug\DemiLib.dll
+C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\Temp\Bin\Debug\DOTween.dll
+C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\Temp\Bin\Debug\DOTweenPro.dll
+C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\Temp\Bin\Debug\Assembly-CSharp-firstpass.pdb
+C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\Temp\Bin\Debug\DemiLib.xml
+C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\Temp\Bin\Debug\DOTween.xml
+C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\Temp\Bin\Debug\DOTweenPro.xml

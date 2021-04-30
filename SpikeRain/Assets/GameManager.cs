@@ -9,8 +9,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject bombPrefab;
     [SerializeField] GameObject coinPrefab;
 
-    [System.NonSerialized] public float bombWaitTime = 0.5f;
-    [System.NonSerialized] public float coinWaitTime = 2;
+    [System.NonSerialized] public float bombWaitTime = 0.6f;
+    [System.NonSerialized] public float coinWaitTime = 4f;
 
     bool isPlaying = true;
     bool hasSpeedUpdate = false;
