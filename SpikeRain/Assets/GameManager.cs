@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     bool hasSpeedUpdate = false;
 
     public int points = 0;
-    [SerializeField] TextMeshProUGUI pointText;
+    [SerializeField] GameObject pointsTextObj;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +34,21 @@ public class GameManager : MonoBehaviour
         //    hasSpeedUpdate = false;
         //    StartCoroutine(BombInstantiate());
         //}
-        pointText.text = points.ToString();
+        if (pointsTextObj != null)
+        {
+            var pointsText = pointsTextObj.GetComponent<TextMeshProUGUI>().text;
+            if (pointsText != points.ToString())
+            {
+                pointsTextObj.GetComponent<TextMeshProUGUI>().text = points.ToString();
+                StartCoroutine(PumpScore());
+            }
+        }
+    }
+    private IEnumerator PumpScore()
+    {
+        pointsTextObj.GetComponent<Animator>().SetBool("addPoints", true);
+        yield return new WaitForSeconds(0.5f);
+        pointsTextObj.GetComponent<Animator>().SetBool("addPoints", false);
     }
 
     private IEnumerator BombInstantiate()
