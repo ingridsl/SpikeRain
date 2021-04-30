@@ -5,9 +5,10 @@ using TMPro;
 
 public class GameOverManager : MonoBehaviour
 {
-    [SerializeField] GameObject toDestroy;
+    [SerializeField] GameObject[] toDestroy;
     [SerializeField] GameManager gameManager;
 
+    [SerializeField] TextMeshProUGUI pointsText;
     [SerializeField] TextMeshProUGUI hishScoreText;
 
     int highScore;
@@ -17,7 +18,10 @@ public class GameOverManager : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         gameManager.isPlaying = false;
 
-        Destroy(toDestroy);
+        foreach (var obj in toDestroy)
+        {
+            Destroy(obj);
+        }
 
         var highScore = PlayerPrefs.GetInt("highscore", 0);
         if (gameManager.points > highScore)
@@ -25,7 +29,8 @@ public class GameOverManager : MonoBehaviour
             highScore = gameManager.points;
             PlayerPrefs.SetInt("highscore", highScore);
         }
-        hishScoreText.text = "Best Score\n" + highScore;
+        hishScoreText.text = "Your Best\n" + highScore;
+        pointsText.text = gameManager.points.ToString();
 
         var total = PlayerPrefs.GetInt("total", 0);
         PlayerPrefs.SetInt("total", total + gameManager.points);
