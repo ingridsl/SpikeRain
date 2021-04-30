@@ -5,13 +5,13 @@ using UnityEngine;
 public class Falling : MonoBehaviour
 {
     private Rigidbody2D rigidBody;
-    private float moveSpeed;
+    private float moveDownSpeed;
     public bool goingRight = false;
     // Start is called before the first frame update
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
-        moveSpeed = 0.4f;
+        moveDownSpeed = 0.4f;
         goingRight = Random.value >= 0.5;
     }
 
@@ -23,17 +23,17 @@ public class Falling : MonoBehaviour
 
     void Fall()
     {
-        float rightMovement = goingRight ? 0.08f : -0.08f;
+        float rightMovement = goingRight ? 0.027f : -0.027f;
 
-        if ( Random.value > 0.99)
+        if ( Random.value > 0.995)
         {
             goingRight = !goingRight;
         }
 
-        rigidBody.velocity = new Vector2(rightMovement, -moveSpeed);
+        rigidBody.velocity = new Vector2(rightMovement, -moveDownSpeed);
         if (gameObject.transform.position.y < -1)
         {
-            //Destroy(this.gameObject);
+            Destroy(this.gameObject);
         }
     }
 }
