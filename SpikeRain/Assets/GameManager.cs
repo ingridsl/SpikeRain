@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     [System.NonSerialized] public float bombWaitTime = 0.6f;
     [System.NonSerialized] public float coinWaitTime = 4f;
 
-    bool isPlaying = true;
+    public bool isPlaying = true;
     bool hasSpeedUpdate = false;
 
     public int points = 0;

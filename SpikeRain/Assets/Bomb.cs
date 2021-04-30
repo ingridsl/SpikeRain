@@ -28,7 +28,6 @@ public class Bomb : MonoBehaviour
             player.SetActive(false);
             
             var explosion = Instantiate(deathPrefab, player.transform.position , Quaternion.identity);
-            //TODO: SALVAR PONTUAÇÃO
 
             StartCoroutine(GameOver());
 
@@ -37,9 +36,9 @@ public class Bomb : MonoBehaviour
 
     private IEnumerator GameOver()
     {
-
         yield return new WaitForSeconds(2);
-        //TODO: MOSTRAR TELA DE GAME OVER
+        var gameOver = GameObject.Find("GameOver");
+        gameOver.transform.GetChild(0).gameObject.SetActive(true);
         yield return new WaitForSeconds(2);
         Destroy(this.gameObject);
     }
