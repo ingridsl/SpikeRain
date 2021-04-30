@@ -54,5 +54,37 @@ public class TouchMove : MonoBehaviour
             anim.SetBool("isGoingRight", false);
             anim.SetBool("isGoingLeft", false);
         }
+
+        //PROVISORIO PARA TESTE NO COMPUTADOR
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            Vector2 aux = new Vector2(-moveSpeed, 0);
+            rigidBody.velocity = aux;
+            anim.SetBool("isGoingRight", false);
+            anim.SetBool("isGoingLeft", true);
+        }
+
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            Vector2 aux = new Vector2(moveSpeed, 0);
+            rigidBody.velocity = aux;
+            anim.SetBool("isGoingRight", true);
+            anim.SetBool("isGoingLeft", false);
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            rigidBody.velocity = new Vector2(0, 0);
+            anim.SetBool("isGoingRight", false);
+            anim.SetBool("isGoingLeft", false);
+
+        }
+        if (Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            rigidBody.velocity = new Vector2(0, 0);
+            anim.SetBool("isGoingRight", false);
+            anim.SetBool("isGoingLeft", false);
+
+        }
     }
 }

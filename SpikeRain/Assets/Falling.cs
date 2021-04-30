@@ -31,7 +31,14 @@ public class Falling : MonoBehaviour
         }
 
         rigidBody.velocity = new Vector2(rightMovement, -moveDownSpeed);
-        if (gameObject.transform.position.y < -1)
+
+        if (gameObject.transform.position.y < -0.35) //LOWER THAN PLAYER
+        {
+            this.gameObject.GetComponent<Animator>().SetBool("isTooLow", true);
+        }
+
+
+        if (gameObject.transform.position.y < -1) //END OF SCREEN
         {
             Destroy(this.gameObject);
         }
