@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using System;
+using TMPro;
+using UnityEngine.UI;
 
 public class ButtonManager : MonoBehaviour
 {
@@ -10,13 +13,12 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] GameObject[] thosePanel;
     [SerializeField] GameObject thatPanel;
 
-
     [SerializeField] GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -66,9 +68,16 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene("GameScene");
     }
 
-    public void OpenSettings()
+    public void OnOffMusic()
     {
+        var musicOn = Convert.ToBoolean(PlayerPrefs.GetInt("music", 1));
+        PlayerPrefs.SetInt("music", Convert.ToInt32(!musicOn));
+    }
 
+    public void OnOffSound()
+    {
+        var soundOn = Convert.ToBoolean(PlayerPrefs.GetInt("sound", 1));
+        PlayerPrefs.SetInt("sound", Convert.ToInt32(!soundOn));
     }
 
     public void Share()

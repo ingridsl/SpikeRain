@@ -4,6 +4,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using System;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,6 +25,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         DOTween.SetTweensCapacity(2000, 1000);
+        OnOffAudio();
 
         DOTween.ClearCachedTweens();
         StartCoroutine(BombInstantiate());
@@ -38,6 +41,9 @@ public class GameManager : MonoBehaviour
         //    hasSpeedUpdate = false;
         //    StartCoroutine(BombInstantiate());
         //}
+        Scene scene = SceneManager.GetActiveScene();
+        OnOffAudio();
+
         if (pointsTextObj != null)
         {
             var pointsText = pointsTextObj.GetComponent<TextMeshProUGUI>().text;
@@ -48,6 +54,22 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    private void OnOffAudio()
+    {
+        //music
+        var musicOn = PlayerPrefs.GetInt("music", 1) == 1;
+        GameObject.FindWithTag("HasMusic").GetComponent<AudioSource>().enabled = musicOn;
+
+        //sounds
+        var soundOn = PlayerPrefs.GetInt("sound", 1) == 1;
+        var soundObjs = GameObject.FindGameObjectsWithTag("HasSound");
+        foreach (var soundObj in soundObjs)
+        {
+            soundObj.GetComponent<AudioSource>().enabled = soundOn;
+        }
+    }
+
     private IEnumerator PumpScore()
     {
         pointsTextObj.GetComponent<Animator>().SetBool("addPoints", true);
@@ -60,7 +82,7 @@ public class GameManager : MonoBehaviour
         while (isPlaying && !hasSpeedUpdate)
         {
             var bomb = Instantiate(bombPrefab);
-            bomb.transform.position = new Vector3(Random.Range(-0.4f, 0.4f), 0.871f, 0);
+            bomb.transform.position = new Vector3(UnityEngine.Random.Range(-0.4f, 0.4f), 0.871f, 0);
             yield return new WaitForSeconds(bombWaitTime);
         }
     }
@@ -70,7 +92,7 @@ public class GameManager : MonoBehaviour
         while (isPlaying)
         {
             var coin = Instantiate(coinPrefab);
-            coin.transform.position = new Vector3(Random.Range(-0.4f, 0.4f), 0.871f, 0);
+            coin.transform.position = new Vector3(UnityEngine.Random.Range(-0.4f, 0.4f), 0.871f, 0);
             yield return new WaitForSeconds(coinWaitTime);
         }
     }

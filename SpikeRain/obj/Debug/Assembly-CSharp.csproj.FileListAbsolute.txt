@@ -314,3 +314,5 @@ C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\Temp\Bin\
 C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\Temp\Bin\Debug\Unity.PlayerPrefsEditor.Editor.pdb
 C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\Temp\Bin\Debug\Unity.PlayerPrefsEditor.Samples.SampleScene.pdb
 C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\Temp\Bin\Debug\Unity.PlayerPrefsEditor.EditorResources.pdb
+C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\Temp\Bin\Debug\NativeShare.Runtime.pdb
+C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\Temp\Bin\Debug\NativeShare.Editor.pdb
