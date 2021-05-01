@@ -9,7 +9,7 @@ public class Falling : MonoBehaviour
     private float moveDownSpeed;
     public bool goingRight = false;
 
-    private Sequence sequence;
+    private Tween sequence;
     private Tween myTween;
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,6 @@ public class Falling : MonoBehaviour
         var rot = new Vector3(0, 0, 360);
         myTween = DOTween.Sequence().
         Append(this.gameObject.transform.DORotate(rot, 5f, RotateMode.LocalAxisAdd).SetLoops(-1, LoopType.Restart));
-
     }
 
     // Update is called once per frame
@@ -46,18 +45,14 @@ public class Falling : MonoBehaviour
             myTween.Kill();
 
             var localScale = this.gameObject.transform.localScale;
-            sequence = DOTween.Sequence()
-            .Append(this.gameObject.transform.DOScale(0, 1f));
+            sequence = this.gameObject.transform.DOScale(0, 1f);
         }
-
 
         if (gameObject.transform.position.y < -1 || this.gameObject.transform.localScale.x == 0) //END OF SCREEN
         {
             sequence.Kill();
             myTween.Kill();
             this.gameObject.transform.DOKill();
-
-            DOTween.Validate();
 
             Destroy(this.gameObject);
         }

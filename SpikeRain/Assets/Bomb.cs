@@ -41,8 +41,6 @@ public class Bomb : MonoBehaviour
 
     private IEnumerator GameOver()
     {
-        DOTween.Validate();
-
         yield return new WaitForSeconds(1.5f);
         var gameOver = GameObject.Find("GameOver");
         gameOver.transform.GetChild(0).gameObject.SetActive(true);

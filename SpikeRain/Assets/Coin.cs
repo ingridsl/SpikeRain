@@ -27,8 +27,6 @@ public class Coin : MonoBehaviour
     {
         if (col.gameObject.name == "Player")
         {
-            DOTween.Validate();
-
             var player = col.gameObject;
             gameManager.points++;
 
