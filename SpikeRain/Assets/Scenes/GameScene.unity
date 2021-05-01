@@ -364,7 +364,7 @@ SpriteRenderer:
   m_SortingLayerID: -1211242945
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 3286163911610860551, guid: 5175e055a183d8042a4a4d0195e6856c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dcf0928b472496f4091ab5f33a4cf867, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -384,7 +384,7 @@ Transform:
   m_GameObject: {fileID: 219008879}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.2, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.023, y: 0.023, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -437,7 +437,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.12
+  m_Radius: 2.572732
 --- !u!82 &219008886
 AudioSource:
   m_ObjectHideFlags: 0
@@ -987,6 +987,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899118daf2bbb9a47b51ab15f4fe33ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisPanel: {fileID: 0}
+  thatPanel: {fileID: 0}
 --- !u!1 &605915585
 GameObject:
   m_ObjectHideFlags: 0
@@ -1718,6 +1720,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899118daf2bbb9a47b51ab15f4fe33ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisPanel: {fileID: 0}
+  thatPanel: {fileID: 0}
 --- !u!1 &1329553435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1863,6 +1867,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899118daf2bbb9a47b51ab15f4fe33ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisPanel: {fileID: 0}
+  thatPanel: {fileID: 0}
 --- !u!1 &1574314564
 GameObject:
   m_ObjectHideFlags: 0
