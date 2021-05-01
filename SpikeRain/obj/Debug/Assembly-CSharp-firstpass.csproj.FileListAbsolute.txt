@@ -301,3 +301,11 @@ C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\obj\Debug
 C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\obj\Debug\Assembly-CSharp-firstpass.csproj.CopyComplete
 C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\obj\Debug\Assembly-CSharp-firstpass.dll
 C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\obj\Debug\Assembly-CSharp-firstpass.pdb
+C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\Temp\Bin\Debug\Unity.InternalAPIEditorBridge.003.dll
+C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\Temp\Bin\Debug\Unity.InternalAPIEngineBridge.003.dll
+C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\Temp\Bin\Debug\Unity.VectorGraphics.dll
+C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\Temp\Bin\Debug\Unity.VectorGraphics.Editor.dll
+C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\Temp\Bin\Debug\Unity.InternalAPIEditorBridge.003.pdb
+C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\Temp\Bin\Debug\Unity.VectorGraphics.Editor.pdb
+C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\Temp\Bin\Debug\Unity.InternalAPIEngineBridge.003.pdb
+C:\Users\USER\Documents\Theory Games\SpikeRain_Git\SpikeRain\SpikeRain\Temp\Bin\Debug\Unity.VectorGraphics.pdb
