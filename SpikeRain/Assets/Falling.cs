@@ -43,14 +43,22 @@ public class Falling : MonoBehaviour
         
         if (gameObject.transform.position.y < -0.35) //LOWER THAN PLAYER
         {
+            myTween.Kill();
+
             var localScale = this.gameObject.transform.localScale;
             sequence = DOTween.Sequence()
-            .Append(this.gameObject.transform.DOScale(0, 2f));
+            .Append(this.gameObject.transform.DOScale(0, 1f));
         }
 
 
-        if (gameObject.transform.position.y < -1) //END OF SCREEN
+        if (gameObject.transform.position.y < -1 || this.gameObject.transform.localScale.x == 0) //END OF SCREEN
         {
+            sequence.Kill();
+            myTween.Kill();
+            this.gameObject.transform.DOKill();
+
+            DOTween.Validate();
+
             Destroy(this.gameObject);
         }
     }

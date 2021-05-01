@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Coin : MonoBehaviour
 {
@@ -10,7 +11,10 @@ public class Coin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        var gameManagerObj = GameObject.Find("GameManager");
+        if (gameManagerObj != null) {
+            gameManager = gameManagerObj.GetComponent<GameManager>();
+        }
     }
 
     // Update is called once per frame
@@ -23,6 +27,8 @@ public class Coin : MonoBehaviour
     {
         if (col.gameObject.name == "Player")
         {
+            DOTween.Validate();
+
             var player = col.gameObject;
             gameManager.points++;
 

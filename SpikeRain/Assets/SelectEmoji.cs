@@ -21,6 +21,6 @@ public class SelectEmoji : MonoBehaviour
     {
         SelectedEmoji selectedEmoji = GameObject.Find("SelectedEmoji").GetComponent<SelectedEmoji>();
         selectedEmoji.selectedSprite = emojiManager.emojis[emojiManager.showing];
-        PlayerPrefs.SetInt("defaultEmoji", emojiManager.showing);
+        PlayerPrefs.SetInt("defaultEmoji", 0);
     }
 }

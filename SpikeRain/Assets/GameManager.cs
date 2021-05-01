@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject bombPrefab;
     [SerializeField] GameObject coinPrefab;
 
-    [System.NonSerialized] public float bombWaitTime = 0.6f;
-    [System.NonSerialized] public float coinWaitTime = 4f;
+    [SerializeField] public float bombWaitTime = 0.6f;
+    [SerializeField] public float coinWaitTime = 4f;
 
     public bool isPlaying = true;
     bool hasSpeedUpdate = false;
@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DOTween.SetTweensCapacity(2000, 1000);
+
+        DOTween.ClearCachedTweens();
         StartCoroutine(BombInstantiate());
         StartCoroutine(CoinInstantiate());
     }
@@ -29,7 +32,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DOTween.Validate();
         //só se quiser alterar a velocidade que cai as bombas
         //if (hasSpeedUpdate)
         //{

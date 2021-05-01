@@ -1,21 +1,39 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
+
+public class EmojiItem
+{
+    public Sprite sprite = null;
+    public int id = 0;
+    public EmojiItem next;
+    public EmojiItem previous;
+}
 
 public class EmojiManager : MonoBehaviour
 {
     [SerializeField] public Sprite[] emojis;
     [SerializeField] public Button playButton;
+    [SerializeField] public SelectedEmoji selectedEmoji;
 
     public int showing = 0;
     string[] unlockedEmojisSA;
     string unlockedEmojisString;
     string key;
+
+    //LinkedList<EmojiItem> emojiList = null;
+
+    //public Sprite[] showingArray;
     // Start is called before the first frame update
     void Start()
     {
+        //emojiList = null;
         SeparateBoughtEmojiList();
+        //AddUnlocked();
+        //AddLocked();
     }
 
     // Update is called once per frame
@@ -23,6 +41,45 @@ public class EmojiManager : MonoBehaviour
     {
         Showing();
     }
+
+    //public void AddUnlocked()
+    //{
+    //    emojiList = new LinkedList<EmojiItem>();
+    //    foreach (var emoji in unlockedEmojisSA)
+    //    {
+    //        emojiList.AddLast(new EmojiItem { sprite = emojis[Int32.Parse(emoji)], id = Int32.Parse(emoji) });
+    //    }
+    //}
+
+    //public void AddLocked()
+    //{
+    //    for (int i = 0; i < emojis.Length; i ++)
+    //    {
+    //        foreach (var unlockedEmoji in unlockedEmojisSA)
+    //        {
+    //            if (Int32.Parse(unlockedEmoji) == i)
+    //            {
+    //                break;
+    //            }
+    //        }
+    //        emojiList.AddLast(new EmojiItem { sprite = emojis[i], id = i });
+    //    }
+    //}
+
+    //public EmojiItem ListAdd(EmojiItem root, Sprite sprite, int id)
+    //{
+    //    EmojiItem node = new EmojiItem();
+    //    node.sprite = sprite;
+    //    node.id = id;
+
+    //    if (root == null)
+    //    {
+    //        return node;
+    //    }
+    //    root.next = node;
+    //    return node;
+    //}
+
 
     public void SeparateBoughtEmojiList()
     {
@@ -92,6 +149,19 @@ public class EmojiManager : MonoBehaviour
             {
                 HideOrNot(child, showing, false);
                 child.GetComponent<Image>().sprite = emojis[showing];
+
+                if (showing == selectedEmoji.GetSelectedInt())
+                {
+                    var rot = new Vector3(0, 0, 360);
+                    DOTween.Sequence().
+                    Append(child.DORotate(rot, 5f, RotateMode.LocalAxisAdd).SetLoops(1, LoopType.Restart));
+                }
+                else
+                {
+                    child.transform.Rotate(0, 0, 0);
+                    DOTween.Clear();
+                    child.transform.rotation = Quaternion.identity;
+                }
             }
             else if (child.name == "RightImage")
             {
@@ -106,6 +176,7 @@ public class EmojiManager : MonoBehaviour
                 }
             }
         }
+
     }
 
     public void AddBought(int bought)

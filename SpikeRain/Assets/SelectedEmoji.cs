@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class SelectedEmoji : MonoBehaviour
 {
@@ -32,26 +30,28 @@ public class SelectedEmoji : MonoBehaviour
         {
             PlayerPrefs.SetInt(key, 0);
         }
-        selectedSprite = emojiManager.emojis[PlayerPrefs.GetInt(key, 0)];
+        selectedSprite = emojiManager.emojis[GetSelectedInt()];
+    }
+
+    public int GetSelectedInt()
+    {
+        return PlayerPrefs.GetInt(key, 0);
     }
 
     void SetPlayerImage()
     {
 
-        Scene scene = SceneManager.GetActiveScene();
-
-        if (scene.name == "GameScene" )
+        if (playerSpriteRenderer == null)
         {
-            if (playerSpriteRenderer == null) {
-                var player = GameObject.Find("Player");
-                if (player != null) {
-                    playerSpriteRenderer = player.GetComponent<SpriteRenderer>();
-                }
-            }
-            if (playerSpriteRenderer!= null && playerSpriteRenderer.sprite != selectedSprite)
+            var player = GameObject.Find("Player");
+            if (player != null)
             {
-                playerSpriteRenderer.sprite = selectedSprite;
+                playerSpriteRenderer = player.GetComponent<SpriteRenderer>();
             }
+        }
+        if (playerSpriteRenderer != null && playerSpriteRenderer.sprite != selectedSprite)
+        {
+            playerSpriteRenderer.sprite = selectedSprite;
         }
     }
 }

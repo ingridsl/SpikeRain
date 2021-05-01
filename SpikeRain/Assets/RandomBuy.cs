@@ -87,6 +87,7 @@ public class RandomBuy : MonoBehaviour
 
         } while (hasEmoji);
 
+        accumulated.UpdateAccumulated(accumulated.accTotal - price);
         StartCoroutine(MoveToBought(toBuy));
     }
 
@@ -97,6 +98,7 @@ public class RandomBuy : MonoBehaviour
             while (toBuy != emojiManager.showing)
             {
                 emojiManager.showing--;
+                emojiText.text = (emojiManager.showing + 1).ToString() + "/" + emojiManager.emojis.Length;
                 yield return new WaitForSeconds(0.5f);
             }
         }
@@ -106,7 +108,7 @@ public class RandomBuy : MonoBehaviour
             {
                 emojiManager.showing++;
                 emojiText.text = (emojiManager.showing + 1).ToString() + "/" + emojiManager.emojis.Length;
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(0.07f);
             }
         }
         StartCoroutine(AddAsBought(toBuy));
@@ -118,13 +120,13 @@ public class RandomBuy : MonoBehaviour
         var localScale = middleEmoji.transform.localScale;
 
         var sequence = DOTween.Sequence()
-        .Append(middleEmoji.transform.DOScale(localScale + (localScale * 10 / 100), 0.5f))
-        .Append(middleImage.DOColor(new Color(1f, 1f, 1f, 1f), 4));
+        .Append(middleEmoji.transform.DOScale(localScale + (localScale * 10 / 100), 0.3f))
+        .Append(middleImage.DOColor(new Color(1f, 1f, 1f, 1f), 3));
 
-        yield return new WaitForSeconds(4f);
+        emojiManager.AddBought(bought);
+
+        yield return new WaitForSeconds(3f);
 
         middleImage.color = new Color(1f, 1f, 1f, 1f);
-        emojiManager.AddBought(bought);
-    }
-    
+    }    
 }

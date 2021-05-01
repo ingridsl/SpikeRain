@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class ButtonManager : MonoBehaviour
 {
     [SerializeField] GameObject thisPanel;
+    [SerializeField] GameObject[] thosePanel;
     [SerializeField] GameObject thatPanel;
+
+
+    [SerializeField] GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -18,10 +23,21 @@ public class ButtonManager : MonoBehaviour
     void Update()
     {
     }
+    public void HideThisOpenThose()
+    {
+        foreach (var toHide in thosePanel)
+        {
+            toHide.SetActive(true);
+        }
+        thisPanel.SetActive(false);
+    }
 
     public void HideThisOpenThat()
     {
-        thisPanel.SetActive(false);
+        foreach (var toHide in thosePanel)
+        {
+            toHide.SetActive(false);
+        }
         thatPanel.SetActive(true);
     }
 
@@ -38,6 +54,15 @@ public class ButtonManager : MonoBehaviour
 
     public void Play()
     {
+        gameManager.isPlaying = false;
+        thisPanel.transform.DOMove(new Vector3(1500, thisPanel.transform.position.y, 0), 5);
+        StartCoroutine(OpenGame());
+    }
+
+    private IEnumerator OpenGame()
+    {
+        yield return new WaitForSeconds(4);
+        Destroy(thisPanel);
         SceneManager.LoadScene("GameScene");
     }
 

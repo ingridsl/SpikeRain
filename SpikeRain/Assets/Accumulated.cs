@@ -29,5 +29,6 @@ public class Accumulated : MonoBehaviour
     {
         accTotal = newTotal;
         PlayerPrefs.SetInt(key, accTotal);
+        LoadAccumulated();
     }
 }

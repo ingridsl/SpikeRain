@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Bomb : MonoBehaviour
 {
@@ -11,7 +12,11 @@ public class Bomb : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        var gameManagerObj = GameObject.Find("GameManager");
+        if (gameManagerObj != null)
+        {
+            gameManager = gameManagerObj.GetComponent<GameManager>();
+        }
     }
 
     // Update is called once per frame
@@ -36,6 +41,8 @@ public class Bomb : MonoBehaviour
 
     private IEnumerator GameOver()
     {
+        DOTween.Validate();
+
         yield return new WaitForSeconds(1.5f);
         var gameOver = GameObject.Find("GameOver");
         gameOver.transform.GetChild(0).gameObject.SetActive(true);
