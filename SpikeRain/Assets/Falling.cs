@@ -43,8 +43,9 @@ public class Falling : MonoBehaviour
         
         if (gameObject.transform.position.y < -0.35) //LOWER THAN PLAYER
         {
+            var localScale = this.gameObject.transform.localScale;
             sequence = DOTween.Sequence()
-            .Append(this.gameObject.transform.DOScale(this.gameObject.transform.localScale * 10 / 100, 0.5f))
+            .Append(this.gameObject.transform.DOScale(localScale + (localScale * 10 / 100), 0.5f))
             .Append(this.gameObject.transform.DOScale(0, 2f));
         }
 

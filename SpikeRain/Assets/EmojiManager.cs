@@ -6,24 +6,33 @@ using UnityEngine.UI;
 public class EmojiManager : MonoBehaviour
 {
     [SerializeField] public Sprite[] emojis;
+    [SerializeField] public Button playButton;
 
     public int showing = 0;
     string[] unlockedEmojisSA;
+    string unlockedEmojisString;
+    string key;
     // Start is called before the first frame update
     void Start()
     {
-        var key = "unlockedEmoji";
-        if (!PlayerPrefs.HasKey(key)){
-            PlayerPrefs.SetString(key, "0");
-        }
-        var unlockedEmojisString = PlayerPrefs.GetString(key, "0");
-        unlockedEmojisSA = unlockedEmojisString.Split('-');
+        SeparateBoughtEmojiList();
     }
 
     // Update is called once per frame
     void Update()
     {
         Showing();
+    }
+
+    public void SeparateBoughtEmojiList()
+    {
+        key = "unlockedEmoji";
+        if (!PlayerPrefs.HasKey(key))
+        {
+            PlayerPrefs.SetString(key, "0");
+        }
+        unlockedEmojisString = PlayerPrefs.GetString(key, "0");
+        unlockedEmojisSA = unlockedEmojisString.Split('-');
     }
 
     public bool HasEmoji(int position)
@@ -35,7 +44,10 @@ public class EmojiManager : MonoBehaviour
 
         foreach (var unlockedEmoji in unlockedEmojisSA)
         {
-            return (unlockedEmoji == (position).ToString());
+            if (unlockedEmoji == (position).ToString())
+            {
+                return true;
+            }
         }
         return false;
     }
@@ -45,9 +57,18 @@ public class EmojiManager : MonoBehaviour
         if (!HasEmoji(position))
         {
             child.GetComponent<Image>().color = new Color(0f, 0f, 0f, (half ? 0.5f : 1f));
+            if (!half) {
+                playButton.interactable = false;
+                playButton.transform.GetChild(0).GetComponent<Image>().color = new Color(1f, 1f, 1f, 0.5f);
+            }
         }
         else{
             child.GetComponent<Image>().color = new Color(1f, 1f, 1f, (half ? 0.5f : 1f));
+            if (!half)
+            {
+                playButton.interactable = true;
+                playButton.transform.GetChild(0).GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
+            }
         }
     }
 
@@ -85,5 +106,11 @@ public class EmojiManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void AddBought(int bought)
+    {
+        PlayerPrefs.SetString(key, unlockedEmojisString + "-" + bought.ToString());
+        SeparateBoughtEmojiList();
     }
 }
