@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
+    [SerializeField] GameObject thisPanel;
+    [SerializeField] GameObject thatPanel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +17,12 @@ public class ButtonManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+    }
+
+    public void HideThisOpenThat()
+    {
+        thisPanel.SetActive(false);
+        thatPanel.SetActive(true);
     }
 
     public void Replay()
