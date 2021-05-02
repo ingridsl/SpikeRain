@@ -58,13 +58,19 @@ public class ButtonManager : MonoBehaviour
     public void Play()
     {
         gameManager.isPlaying = false;
-        thisPanel.transform.DOMove(new Vector3(1500, thisPanel.transform.position.y, 0), 5);
+        thisPanel.transform.DOMove(new Vector3(thisPanel.transform.position.x, 5000, 0), 4).SetEase(Ease.OutSine);
+
+        foreach (var thatPanel in thosePanel)
+        {
+            thatPanel.transform.DOMove(new Vector3(thatPanel.transform.position.x, -500, 0), 4).SetEase(Ease.OutSine);
+        }
+
         StartCoroutine(OpenGame());
     }
 
     private IEnumerator OpenGame()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(1.5f);
         Destroy(thisPanel);
         SceneManager.LoadScene("GameScene");
     }
