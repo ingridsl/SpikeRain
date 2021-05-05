@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goingRight: 0
+  isCoin: 1
 --- !u!58 &8087373193241998208
 CircleCollider2D:
   m_ObjectHideFlags: 0

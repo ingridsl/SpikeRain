@@ -28,6 +28,12 @@ public class GameManager : MonoBehaviour
         OnOffAudio();
 
         DOTween.ClearCachedTweens();
+        CallRain();
+    }
+
+    public void CallRain()
+    {
+
         StartCoroutine(BombInstantiate());
         StartCoroutine(CoinInstantiate());
     }
@@ -49,10 +55,15 @@ public class GameManager : MonoBehaviour
             var pointsText = pointsTextObj.GetComponent<TextMeshProUGUI>().text;
             if (pointsText != points.ToString())
             {
-                pointsTextObj.GetComponent<TextMeshProUGUI>().text = points.ToString();
-                StartCoroutine(PumpScore());
+                var textMesh = pointsTextObj.GetComponent<TextMeshProUGUI>();
+                if (textMesh.text != points.ToString())
+                {
+                    textMesh.text = points.ToString();
+                    StartCoroutine(PumpScore());
+                }
             }
         }
+        
     }
 
     private void OnOffAudio()
@@ -72,14 +83,20 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator PumpScore()
     {
-        pointsTextObj.GetComponent<Animator>().SetBool("addPoints", true);
-        yield return new WaitForSeconds(0.5f);
-        pointsTextObj.GetComponent<Animator>().SetBool("addPoints", false);
+        //pointsTextObj.GetComponent<Animator>().SetBool("addPoints", true);
+
+            var previous = pointsTextObj.transform.localScale;
+            var localScale = pointsTextObj.transform.localScale;
+            pointsTextObj.transform.DOScale(new Vector3(localScale.x + (localScale.x * 15 / 100), localScale.y + (localScale.y * 15 / 100), localScale.z), 0.2f);
+            yield return new WaitForSeconds(0.3f);
+            pointsTextObj.transform.DOScale(new Vector3(previous.x, previous.y, previous.z), 0.2f);
+
+        //pointsTextObj.GetComponent<Animator>().SetBool("addPoints", false);
     }
 
     private IEnumerator BombInstantiate()
     {
-        while (isPlaying && !hasSpeedUpdate)
+        while (isPlaying)
         {
             var bomb = Instantiate(bombPrefab);
             bomb.transform.position = new Vector3(UnityEngine.Random.Range(-0.4f, 0.4f), 0.871f, 0);

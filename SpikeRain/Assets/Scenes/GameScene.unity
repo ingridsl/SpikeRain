@@ -601,7 +601,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &266680020
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1010,7 +1010,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &605915586
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1225,25 +1225,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3112481556095115446, guid: 6d8750fc4c1cc8a418112fbd572eeaad, type: 3}
   m_PrefabInstance: {fileID: 3112481556437704891}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &879591441
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 879591437}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 18d9517b7324288438b3c69153ad8a9f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &891306503
 GameObject:
   m_ObjectHideFlags: 0
@@ -1278,7 +1259,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.05, y: 0.1175625}
   m_AnchorMax: {x: 0.95000005, y: 0.29934376}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -168}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &891306505
@@ -1396,7 +1377,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &962708887
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1894,7 +1875,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1574314565
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2201,6 +2182,9 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   pointsText: {fileID: 891306505}
   hishScoreText: {fileID: 1574314566}
+  score: {fileID: 605915587}
+  menuPanel1: {fileID: 266680019}
+  menuPanel2: {fileID: 962708886}
 --- !u!1 &1879015813
 GameObject:
   m_ObjectHideFlags: 0

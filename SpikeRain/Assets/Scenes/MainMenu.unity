@@ -337,7 +337,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 360, y: -942.0431}
+  m_AnchoredPosition: {x: 540, y: -1326.0431}
   m_SizeDelta: {x: 720, y: 177.3288}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &69006957
@@ -360,11 +360,11 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 0
+  m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
+  m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
+  m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
 --- !u!1 &111784304
 GameObject:
@@ -582,8 +582,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 360, y: -54.995544}
-  m_SizeDelta: {x: 684.1816, y: 109.9911}
+  m_AnchoredPosition: {x: 540, y: -54.995544}
+  m_SizeDelta: {x: 889.5535, y: 109.9911}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &192397753
 MonoBehaviour:
@@ -647,8 +647,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 360, y: -54.99555}
-  m_SizeDelta: {x: 720, y: 109.9911}
+  m_AnchoredPosition: {x: 540, y: -54.99555}
+  m_SizeDelta: {x: 1051.3381, y: 109.9911}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &413952946
 MonoBehaviour:
@@ -710,7 +710,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 646.38434, y: -54.99555}
+  m_AnchoredPosition: {x: 922.4994, y: -54.99555}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &451843877
@@ -1409,7 +1409,7 @@ MonoBehaviour:
   - {fileID: 1526595451}
   - {fileID: 1838802252}
   thatPanel: {fileID: 1807241982}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 1041279105}
 --- !u!114 &623411486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1456,15 +1456,15 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 623411485}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
-        m_MethodName: HideThisOpenThat
-        m_Mode: 1
+        m_MethodName: HideThoseOpenThat
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 1
 --- !u!114 &623411487
 MonoBehaviour:
@@ -1638,7 +1638,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 360, y: -1155.3538}
+  m_AnchoredPosition: {x: 540, y: -1667.3538}
   m_SizeDelta: {x: 720, y: 177.3288}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &684885105
@@ -1853,7 +1853,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 23.6157, y: -54.99555}
+  m_AnchoredPosition: {x: 78.83873, y: -54.99555}
   m_SizeDelta: {x: 147.103, y: 109.99}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &729809176
@@ -1903,14 +1903,14 @@ MonoBehaviour:
       - m_Target: {fileID: 729809179}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
         m_MethodName: HideThisOpenThose
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 1
 --- !u!114 &729809177
 MonoBehaviour:
@@ -1968,7 +1968,7 @@ MonoBehaviour:
   - {fileID: 1526595451}
   - {fileID: 1838802252}
   thatPanel: {fileID: 474626522}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 1041279105}
 --- !u!1 &950715872
 GameObject:
   m_ObjectHideFlags: 0
@@ -2271,7 +2271,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 544.1529, y: -54.99555}
+  m_AnchoredPosition: {x: 709.822, y: -54.99555}
   m_SizeDelta: {x: 321.2028, y: 100}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1037301219
@@ -2618,7 +2618,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 360, y: -694.9956}
+  m_AnchoredPosition: {x: 540, y: -1014.9956}
   m_SizeDelta: {x: 720, y: 177.3288}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1153490007
@@ -2988,7 +2988,7 @@ MonoBehaviour:
   - {fileID: 1526595451}
   - {fileID: 1838802252}
   thatPanel: {fileID: 683204753}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 1041279105}
 --- !u!114 &1242181576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3035,15 +3035,15 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1242181575}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
-        m_MethodName: HideThisOpenThat
-        m_Mode: 1
+        m_MethodName: HideThoseOpenThat
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 1
 --- !u!114 &1242181577
 MonoBehaviour:
@@ -3392,15 +3392,15 @@ RectTransform:
   m_GameObject: {fileID: 1368471811}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 69006956}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 63.36842, y: -88.6644}
-  m_SizeDelta: {x: 58.725, y: 109.99}
+  m_AnchoredPosition: {x: 62.223236, y: -88.6644}
+  m_SizeDelta: {x: 64, y: 177.3288}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1368471813
 MonoBehaviour:
@@ -3895,8 +3895,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 467.49084, y: -88.6644}
-  m_SizeDelta: {x: 218.6606, y: 100}
+  m_AnchoredPosition: {x: 469.33032, y: -88.6644}
+  m_SizeDelta: {x: 218.6606, y: 177.3288}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1475999890
 MonoBehaviour:
@@ -4087,7 +4087,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &1526595456
 Rigidbody2D:
   serializedVersion: 4
@@ -4208,7 +4208,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 360, y: -234.63736}
+  m_AnchoredPosition: {x: 540, y: -362.63736}
   m_SizeDelta: {x: 720, y: 177.3288}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1591403659
@@ -4266,15 +4266,15 @@ RectTransform:
   m_GameObject: {fileID: 1592366423}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 69006956}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 594.22766, y: -88.6644}
-  m_SizeDelta: {x: 62.4039, y: 109.99}
+  m_AnchoredPosition: {x: 593.77673, y: -88.6644}
+  m_SizeDelta: {x: 64, y: 177.3288}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1592366425
 MonoBehaviour:
@@ -4602,7 +4602,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 360, y: -588.3402}
+  m_AnchoredPosition: {x: 540, y: -844.3402}
   m_SizeDelta: {x: 720, y: 458.1132}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1645397870
@@ -4867,7 +4867,7 @@ MonoBehaviour:
   - {fileID: 1526595451}
   - {fileID: 1838802252}
   thatPanel: {fileID: 474626522}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 1041279105}
 --- !u!114 &1699572221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4915,14 +4915,14 @@ MonoBehaviour:
       - m_Target: {fileID: 1699572220}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
         m_MethodName: HideThisOpenThose
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 1
 --- !u!114 &1699572222
 MonoBehaviour:
@@ -5153,7 +5153,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1838802253
 SpriteRenderer:
   m_ObjectHideFlags: 0

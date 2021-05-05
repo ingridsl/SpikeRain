@@ -11,6 +11,8 @@ public class Falling : MonoBehaviour
 
     private Tween sequence;
     private Tween myTween;
+
+    [SerializeField] bool isCoin;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,9 +20,18 @@ public class Falling : MonoBehaviour
         moveDownSpeed = 0.4f;
         goingRight = Random.value >= 0.5;
 
-        var rot = new Vector3(0, 0, 360);
-        myTween = DOTween.Sequence().
-        Append(this.gameObject.transform.DORotate(rot, 5f, RotateMode.LocalAxisAdd).SetLoops(-1, LoopType.Restart));
+        if (!isCoin)
+        {
+            var rot = new Vector3(0, 0, 360);
+            myTween = DOTween.Sequence().
+            Append(this.gameObject.transform.DORotate(rot, 5f, RotateMode.LocalAxisAdd).SetLoops(-1, LoopType.Restart));
+        }
+        else
+        {
+            var rot = new Vector3(0, 0, -360);
+            myTween = DOTween.Sequence().
+            Append(this.gameObject.transform.DORotate(rot, 5f, RotateMode.LocalAxisAdd).SetLoops(-1, LoopType.Restart));
+        }
     }
 
     // Update is called once per frame

@@ -154,7 +154,7 @@ public class EmojiManager : MonoBehaviour
                 {
                     var rot = new Vector3(0, 0, 360);
                     DOTween.Sequence().
-                    Append(child.DORotate(rot, 5f, RotateMode.LocalAxisAdd).SetLoops(1, LoopType.Restart));
+                    Append(child.DORotate(rot, 30f, RotateMode.LocalAxisAdd).SetLoops(1, LoopType.Restart));
                 }
                 else
                 {

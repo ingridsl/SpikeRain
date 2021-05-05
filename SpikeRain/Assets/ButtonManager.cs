@@ -26,8 +26,13 @@ public class ButtonManager : MonoBehaviour
     void Update()
     {
     }
-    public void HideThisOpenThose()
+    public void HideThisOpenThose(bool changePlaying = false)
     {
+        if (changePlaying)
+        {
+            gameManager.isPlaying = !gameManager.isPlaying;
+            gameManager.CallRain();
+        }
         foreach (var toHide in thosePanel)
         {
             toHide.SetActive(true);
@@ -35,8 +40,13 @@ public class ButtonManager : MonoBehaviour
         thisPanel.SetActive(false);
     }
 
-    public void HideThisOpenThat()
+    public void HideThoseOpenThat(bool changePlaying = false)
     {
+        //if (changePlaying)
+        //{
+        gameManager.isPlaying = !gameManager.isPlaying;
+        //    gameManager.CallRain();
+        //}
         foreach (var toHide in thosePanel)
         {
             toHide.SetActive(false);
